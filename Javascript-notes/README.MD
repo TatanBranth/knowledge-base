@@ -3,11 +3,18 @@
 - [Función autoinvocada](#función-autoinvocada)
 - [Operador de fusión de nullos](#operador-de-fusión-de-nullos)
 - [Operador de nullidad](#operador-de-nullidad)
+- [Object entries](#object-entries)
+- [Object from entries](#object-from-entries)
 - [Promesas](#promesas)
 - [Configuración archivos EMS y CSJ](#configuración-archivos-ems-y-csj)
 - [Configurar formatter en un proyecto node](#configurar-formatter-en-un-proyecto-node)
 - [Consultar eventos suscritos en navegador](#consultar-eventos-suscritos-en-el-navegador)
 - [Como recorrer un objeto](#como-recorrer-un-objeto)
+- [Utilizar biblioteca Tempo para fechas](#)
+- [Date fns](#date-fns)
+- [Formularios](#formularios)
+    - [Acceder a la información de los elementos del formulario](#acceder-a-la-información-de-los-elementos-del-formulario)
+    - [Event preventDefault](#event-preventdefault)
 
 
 ## Función autoinvocada
@@ -37,6 +44,49 @@ valor2: El valor que se devuelve si valor1 es null o undefined
 
 Si ```user``` tiene algun valor, entonces ```userName``` será asignado con dicho valor, si  
 ```user``` resulta ser __null__ entonces ```userName``` tomará el valor de "invitado"
+
+## Object entries
+
+Parámetro:  
+Un objeto (clave, valor)
+
+retorna:  
+Un array de arrays de pares clave, valor: ```[[clave, valor],[clave, valor] ...]```
+
+Ejemplo:  
+    const object1 = {
+        a: 'somestring',
+        b: 42,
+    };
+
+    for (const [key,value] of Object.entries(object1)) { // mismo que "for (const value of Object.entries(object1))"
+        console.log(`${key}: ${value}`);                 // console.log (`${value[0]}: ${value[1]}`)
+    }
+
+    // Expected output:
+    // "a: somestring"
+    // "b: 42"
+
+## Object from entries
+
+Parámetro:  
+Un Array con subarrays de pares ordenados ```[[clave, valor],[clave, valor] ...]```  
+también puede ser el resultado de un ``` Map() ```
+
+Return:  
+Un objeto (clave, valor)
+
+Ejemplo:  
+
+    const entries = new Map([
+        ['foo', 'bar'],
+        ['baz', 42],
+    ]);
+
+    const obj = Object.fromEntries(entries);
+
+    console.log(obj);
+    // Expected output: Object { foo: "bar", baz: 42 }
 
 ## Promesas
 
@@ -115,3 +165,57 @@ del navegador, los eventos suscritos usando la propiedad Window:
         // mismo que
         console.log(animals[Object.keys(animals)[i]])
     }
+
+## Usar la biblioteca Tempo para fechas
+
+es una biblioteca muy util para formatear fechas en javascript
+
+    npm install @formkit/tempo
+
+[Documentacion](https://tempo.formkit.com/#introduction)
+
+# Formularios
+
+## Acceder a la información de los elementos del formulario
+
+Extraer la información de los elementos de un formulario mediante el evento:
+
+    function handleSubmit (event) {
+        const fields = New window.FormData(event.target);
+        const inputValue = fields.get('inputName')
+    }
+
+HTML:
+
+    <form class='form' onSubmit='handleSubmit'>
+        <input name='inputName' placeholder='wherever'/>
+        <button type='submit'>accept</button>
+    </form>
+
+Extraer multiples inputs:
+
+    function handleSubmit (event) {
+        // returna un objeto con todos los inputs del formulario
+        const fields = Object.fromEntries(new window.FormData(event.target));
+    }
+
+## Event preventDefault
+
+De manera nativa cuando usamos un formulario Html y se activa su evento "submit" este recargará la página  
+para evitar este comportamiento predeterminado se usa el siguiente metodo:
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
+Evitando que se recarge la página y pudiendo maniobrar sobre el formulario
+
+
+## Date fns
+
+Biblioteca para usar fechas, tiene funciones muy utiles como el uso de zonas horarias  
+para mostrar una fecha y hora dependiendo desde que zona del mundo se este visualizando
+
+[Date-fns](https://date-fns.org)
+
+    npm install date-fns --save
