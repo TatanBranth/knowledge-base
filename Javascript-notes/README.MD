@@ -3,6 +3,8 @@
 - [Función autoinvocada](#función-autoinvocada)
 - [Operador de fusión de nullos](#operador-de-fusión-de-nullos)
 - [Operador de nullidad](#operador-de-nullidad)
+- [Spread operator](#spread-operator)
+- [Rest operator](#rest-operator)
 - [Object entries](#object-entries)
 - [Object from entries](#object-from-entries)
 - [Promesas](#promesas)
@@ -44,6 +46,36 @@ valor2: El valor que se devuelve si valor1 es null o undefined
 
 Si ```user``` tiene algun valor, entonces ```userName``` será asignado con dicho valor, si  
 ```user``` resulta ser __null__ entonces ```userName``` tomará el valor de "invitado"
+
+## Spread operator
+
+Para evitar mutar arrays u objetos se debe usar el spread operator que hace una copia  
+de un objeto o array:
+
+    const newArray = [...oldArray]
+    // copia superficial del array
+
+    const newObject = {...oldObject}
+    // copia superficial del objeto
+
+    const newArray =  structuredClone(oldArray)
+    // copia profunda de un array u objecto, que tienen anidaciones de objetos o arrays dentro
+
+## Rest operator
+
+Este operador usulamente se usa para dividir por ejemplo en la destructuracion:
+
+    const [primero, segundo, ...resto] = [1,2,3,4,5,6];
+    console.log(resto) // [3,4,5,6]
+
+También se puede usar para agrupar argumentos en una función
+
+    function sumar(...numeros) {
+        return numero.reduce((acumulador,numero) => acumulador + numero, 0);
+    }
+    // presenta la suma de todos los numeros que sean pasados por parámetro
+    console.log(sumar(1,2,3,4)); // 10
+
 
 ## Object entries
 

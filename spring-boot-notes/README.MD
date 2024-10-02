@@ -1,8 +1,8 @@
 # Indice
 
--[¿Que es sprint boot?](#que-es-sprint-boot)
--[Jar o War](#jar-o-war)
--[Anotaciones](#anotaciones)
+-[¿Que es sprint boot?](#que-es-sprint-boot)  
+-[Jar o War](#jar-o-war)  
+-[Anotaciones](#anotaciones)  
 
 ## ¿Que es sprint boot?
 
