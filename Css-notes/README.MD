@@ -3,7 +3,8 @@
 - [Funcionalidad para animaciones @starting style](#funcionalidad-starting-style)
 - [Funcionalidad Aspect-Ratio](#funcionalidad-aspect-ratio)
 - [Funcionalidad animacion inifita de carga](#funcionalidad-animacion-inifita-de-carga)
-
+- [Water css](#water-css)
+- [Common break points](#common-break-points)
 
 ## Funcionalidad Starting style
 
@@ -115,3 +116,18 @@ Resultado:
         }
     }
 </style>
+
+## Water css
+
+setup para iniciar con algunos estilos base un proyecto
+
+[Water.css](https://watercss.kognise.dev)
+
+## Common break points
+
+- xs 320 - 360  
+- sm 360  
+- md 576  
+- lg 992  
+- xl 1200  
+- xxl 1400  

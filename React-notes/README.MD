@@ -1,9 +1,9 @@
 # Indice
 
+- [Inicializar proyecto npm/vite-react](#como-crear-un-proyecto-en-reac-con-vite)
 - [Hook useRef](#hook-useref)
 - [Manejo de formularios](#manejo-de-formularios)
 - [Iconos react](#iconos-react)
-- [Inicializar proyecto npm/vite-react](#como-crear-un-proyecto-en-reac-con-vite)
 - [Que es una componente](#que-es-una-componente-react)
 - [Que es un elemento](#que-es-un-elemento-react)
 - [Tips](#tips)
@@ -12,6 +12,23 @@
     - [render en el punto de entrada](#renderizar-mas-de-un-elemento-en-el-punto-de-entrada)
     - [bolenos por parámetro](#boleanos-por-parámetro)
     - [funcion por parámetro](#pasando-una-función-como-parámetro)
+
+## Como crear un proyecto en reac con vite
+
+1. Inicializar un proyecto __npm__
+
+    npm init -y
+
+2. Inicializar un proyecto con vite:
+
+    npm create vite@latest
+
+Se escogen las opciones que son de nuestro interés por ejemplo, vite-react, javascript o  
+typescript y jsx
+
+3. entrar en la ruta del proyecto e installar las dependecias  
+
+    npm install
 
 ## Hook useRef
 
@@ -88,22 +105,6 @@ Libreria de iconos para react
 
 ![alt text](./images/icons.png)
 
-## Como crear un proyecto en reac con vite
-
-1. Inicializar un proyecto __npm__
-
-    npm init -y
-
-2. Inicializar un proyecto con vite:
-
-    npm create vite@latest
-
-Se escogen las opciones que son de nuestro interés por ejemplo, vite-react, javascript o  
-typescript y jsx
-
-3. entrar en la ruta del proyecto e installar las dependecias  
-
-    npm install
 
 ## ¿Que es una componente react?
 

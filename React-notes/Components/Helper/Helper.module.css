@@ -1,0 +1,36 @@
+.helper-container {
+    display: inline-block;
+    max-height: 20px;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+}
+
+.helper-container:hover > .helper-panel {
+    display: block;
+}
+
+.helper-panel {
+    display: none;
+    position: absolute;
+    min-width: 300px;
+    min-height: auto;
+    top: -100%;
+    left: 20px;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 5px;
+    box-shadow: inset;
+    background-color: white;
+    z-index: 5;
+}
+.helper-panel p{
+    font-size: 14px;
+    color: rgb(151, 151, 151);
+    margin: 20px;
+}
+.helper-panel h1 {
+    color: white;
+    background-color: #5ba730;
+    padding: 10px;
+    font-size: 16px;
+}
